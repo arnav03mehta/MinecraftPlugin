@@ -1,0 +1,21 @@
+name: CommandsTest
+version: 1.0
+main: io.github.arnav03mehta.TestPlugin
+api-version: 1.16
+author: /dev/Null
+commands:
+  heal:
+    description: Heals to max health
+    usage: /<command>
+  hello:
+    description: says something back
+    usage: /<command>
+    aliases: [hi, ello]
+  becomeop:
+    description: Gives player op items
+    usage: /<command>
+  stonewalk:
+    description: Enables/Disables the stoneWaks event notifier
+    usage: /<command>
+  maps:
+    usage: /<command>
