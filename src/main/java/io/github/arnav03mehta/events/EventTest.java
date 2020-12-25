@@ -36,7 +36,7 @@ public class EventTest implements Listener {
             player.sendMessage(ChatColor.LIGHT_PURPLE + "Your are standing on stone");
         }
     }
-    /*
+
     @EventHandler
     public static void onMapInitialize(MapInitializeEvent event) {
         MapView view = event.getMap();
@@ -49,5 +49,5 @@ public class EventTest implements Listener {
             }
         });
     }
-    */
+
 }
