@@ -7,15 +7,18 @@ commands:
   heal:
     description: Heals to max health
     usage: /<command>
-  hello:
-    description: says something back
-    usage: /<command>
-    aliases: [hi, ello]
+ hello:
+   description: says something back
+   usage: /<command>
+   aliases: [hi, ello]
   becomeop:
     description: Gives player op items
     usage: /<command>
-  stonewalk:
-    description: Enables/Disables the stoneWaks event notifier
+ stonewalk:
+   description: Enables/Disables the stoneWalks event notifier
+   usage: /<command>
+#  maps:
+#    usage: /<command>
+  openinv:
     usage: /<command>
-  maps:
-    usage: /<command>
+ 

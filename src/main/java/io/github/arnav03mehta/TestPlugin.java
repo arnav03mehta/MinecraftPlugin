@@ -14,10 +14,11 @@ public final class TestPlugin extends JavaPlugin {
         TestCommands commands = new TestCommands();
         getServer().getPluginManager().registerEvents(new EventTest(), this);
         getCommand("heal").setExecutor(commands);
-        getCommand("hello").setExecutor(commands);
+        getCommand("openinv").setExecutor(commands);
+//        getCommand("hello").setExecutor(commands);
         getCommand("becomeop").setExecutor(commands);
-        getCommand("stonewalk").setExecutor(commands);
-        getCommand("maps").setExecutor(commands);
+//        getCommand("stonewalk").setExecutor(commands);
+//        getCommand("maps").setExecutor(commands);
         getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "Plugin Enabled");
     }
 

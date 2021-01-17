@@ -2,6 +2,7 @@ package io.github.arnav03mehta.Commands;
 
 import io.github.arnav03mehta.items.ImageItem;
 import io.github.arnav03mehta.items.ItemManager;
+import io.github.arnav03mehta.inventories.TestInventory;
 import org.bukkit.ChatColor;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.command.Command;
@@ -38,11 +39,11 @@ public class TestCommands implements CommandExecutor {
         Player player = (Player) sender;
 
         switch (label) {
-            case ("hello") : {
+            case ("hello") -> {
                 player.sendMessage(ChatColor.DARK_AQUA + "What bitch?");
                 return true;
             }
-            case ("heal") :{
+            case ("heal") -> {
                 double maxHealth =  Objects.requireNonNull(
                         player.getAttribute(Attribute.GENERIC_MAX_HEALTH)
                 ).getDefaultValue();
@@ -50,7 +51,7 @@ public class TestCommands implements CommandExecutor {
                 player.sendMessage(ChatColor.GREEN + "Healed you to max health");
                 return true;
             }
-            case ("stonewalk") :{
+            case ("stonewalk") -> {
                 if (args.length >= 1) {
                     if (args[0].equalsIgnoreCase("true")) {
                         enabled = true;
@@ -64,7 +65,7 @@ public class TestCommands implements CommandExecutor {
                 }
                 return true;
             }
-            case ("becomeop") :{
+            case ("becomeop") -> {
                 PlayerInventory inventory = player.getInventory();
                 inventory.addItem(ItemManager.gapples);
                 inventory.addItem(ItemManager.silky);
@@ -81,7 +82,7 @@ public class TestCommands implements CommandExecutor {
                 return true;
             }
 
-            case ("maps") :{
+            case ("maps") -> {
                 ItemStack map;
                 if (args.length >= 1) {
                     map = ImageItem.maps.get(args[0]);
@@ -97,8 +98,12 @@ public class TestCommands implements CommandExecutor {
                 }
                 return true;
             }
-            default:
-                return false;
+            case("openinv") -> {
+                TestInventory gui = new TestInventory();
+                player.openInventory(gui.getInventory());
+                return true;
+            }
+            default -> { return false; }
         }
     }
 }

@@ -6,7 +6,15 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class ItemManager {
+
+    public static ItemStack acceptPane;
+    public static ItemStack declinePane;
+    public static ItemStack centerItem;
 
     public static ItemStack sword;
     public static ItemStack silky;
@@ -26,6 +34,16 @@ public class ItemManager {
         createShirt();
         createPants();
         ImageItem.init();
+        declinePane = createItem(Material.RED_STAINED_GLASS_PANE,
+                ChatColor.RED + "Decline",
+                Collections.singletonList(ChatColor.GRAY+"Declines the request"));
+        acceptPane = createItem(Material.LIME_STAINED_GLASS_PANE,
+                ChatColor.GREEN + "Accept",
+                Collections.singletonList(ChatColor.GRAY+"Accepts the request"));
+        List<String> lore = new ArrayList<>();
+        lore.add("Select either the accept or");
+        lore.add("Decline button to make a selection");
+        centerItem = createItem(Material.BOOK, "Make a selection", lore);
     }
 
     private static void createSword() {
@@ -122,4 +140,14 @@ public class ItemManager {
         item.setItemMeta(itemMeta);
         socks = item;
     }
+
+    public static ItemStack createItem(Material material, String name, List<String> lore) {
+        ItemStack item = new ItemStack(material, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName(name);
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+        return item;
+    }
+
 }
